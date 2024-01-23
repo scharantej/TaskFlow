@@ -1,0 +1,20 @@
+
+
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Recurring Todo List</h1>
+<ul>
+{% for todo in todos %}
+<li>
+{{ todo.task_name }} (due {{ todo.due_date }}) - {{ todo.frequency }} - {{ todo.progress }}% complete
+<a href="/edit_recurring_todo/{{ loop.index }}">Edit</a>
+</li>
+{% endfor %}
+</ul>
+<a href="/add_recurring_todo">Add a New Recurring Todo</a>
+{% endblock %}
+
+
+
